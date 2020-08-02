@@ -7,9 +7,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <time.h>
+
+#define OPTIONNUM 13
 
 int main(void) {
 
+  int i;
+  int random;
   FILE *fp;
   char *ticker;
   char *name;
@@ -32,6 +37,17 @@ int main(void) {
 
   printf("Welcome, here is a random stock to YOLO.\n\n");
 
+  //Seeding rng
+  srand(time(0));
+
+  for (i = 0; i < OPTIONNUM; i++) {
+
+      random = (rand() % (OPTIONNUM-0+1)) + 0;
+
+  }
+
+
+
   fp = fopen("NasdaqListed.txt","r");
 
   if (fp ==NULL) {
@@ -46,7 +62,7 @@ int main(void) {
   printf("Ticker: %s\n",ticker);
   printf("Name: %s\n",name);
   printf("ETF: %s\n\n",etf);
-  printf("Option Type: %s\n",type);
+  printf("Option Type: %s\n",type[random]);
 
   return 0;
 }
