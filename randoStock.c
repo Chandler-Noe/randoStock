@@ -40,6 +40,7 @@ int main(void) {
   //Seeding rng
   srand(time(0));
 
+  //Sets random number for the option type
   for (i = 0; i < OPTIONNUM; i++) {
 
       random = (rand() % (OPTIONNUM-0+1)) + 0;
@@ -61,7 +62,7 @@ int main(void) {
   //Printing information
   printf("Ticker: %s\n",ticker);
   printf("Name: %s\n",name);
-  printf("ETF: %s\n\n",etf);
+  printf("ETF: %s\n",etf);
   printf("Option Type: %s\n",type[random]);
 
   return 0;
